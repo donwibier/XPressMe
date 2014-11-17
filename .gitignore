@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -41,3 +42,22 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+packages/jQuery.2.1.1/*.*
+*.dll
+*.pdb
+*.cache
+*.txt
+*.suo
+*.licenses
+*.licx
+.nuget/NuGet.exe
+packages/jQuery.2.1.1/Content/Scripts/jquery-2.1.1-vsdoc.js
+packages/jQuery.2.1.1/Content/Scripts/jquery-2.1.1.js
+packages/jQuery.2.1.1/Content/Scripts/jquery-2.1.1.min.js
+packages/jQuery.2.1.1/Content/Scripts/jquery-2.1.1.min.map
+packages/jQuery.2.1.1/Tools/common.ps1
+packages/jQuery.2.1.1/Tools/install.ps1
+packages/jQuery.2.1.1/Tools/jquery-2.1.1.intellisense.js
+packages/jQuery.2.1.1/Tools/uninstall.ps1
+XPressMe.Web/bin/XPressMe.Web.dll.config
