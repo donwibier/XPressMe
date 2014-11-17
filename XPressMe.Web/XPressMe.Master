@@ -1,0 +1,195 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XPressMe.master.cs" Inherits="XPressMe.Web.XPressMe" %>
+
+<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPanel" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxCallbackPanel" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxMenu" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPopupControl" TagPrefix="dx" %>
+
+<%@ Register src="CustomCtrls/PopupFooter.ascx" tagname="PopupFooter" tagprefix="uc1" %>
+<%@ Register src="CustomCtrls/PostControl.ascx" tagname="PostControl" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head runat="server">
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>Your Page Title Here :)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="stylesheets/base.css">
+    <link rel="stylesheet" href="stylesheets/skeleton.css">
+    <link rel="stylesheet" href="stylesheets/layout.css">
+
+    <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <script src="Scripts/jquery-2.1.1.js"></script>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frm" runat="server">
+        <div class="page">
+            <div class="band header">
+                <header class="container">
+                    <div class="sixteen columns">
+                        <h1 class="logo"><a id="A1" runat="server" href="~/">XPressMe</a></h1>
+                        <a class="banner" href="#"></a>
+                    </div>
+                </header>
+            </div>
+            <div class="band navigation">
+                <nav class="container primary">
+                    <dx:ASPxCallbackPanel runat="server" ID="navContainer" ClientIDMode="Static" CssClass="widgetContainer" Width="100%"
+						OnCallback="navContainer_Callback" OnCustomJSProperties="navContainer_CustomJSProperties" ShowLoadingPanel="False">
+                        <PanelCollection>
+                            <dx:PanelContent runat="server">
+                                <dx:ASPxMenu ID="dxMainMenu" runat="server" ItemAutoWidth="false" CssClass="myNavigation" Width="100%">
+                                    <Items>
+                                        <dx:MenuItem Text="+" Name="Insert">
+                                            <ItemStyle ForeColor="#ffffff"></ItemStyle>
+                                        </dx:MenuItem>
+                                        <dx:MenuItem Text="#" Name="Edit">
+                                            <ItemStyle ForeColor="#ffffff"></ItemStyle>
+                                        </dx:MenuItem>
+                                    </Items>
+                                    <ClientSideEvents ItemClick="function(s, e) {
+											        if (e.item.name != '') 
+											        {
+												        wnd = dxdash.GetWindowByName(e.item.name);
+												        if (wnd != null) {												
+													        if (!dxdash.IsWindowVisible(wnd)) {														
+														        window['wnd'] = wnd;
+														        dxdash.PerformWindowCallback(wnd, e.item.name);														
+													        }
+													        else 
+														        dxdash.HideWindow(wnd);
+												        }
+												        e.htmlEvent.cancelBubble = true;
+												        e.processOnServer = false;
+												        return false;
+											        }								
+										        }" />
+                                </dx:ASPxMenu>        
+                            </dx:PanelContent>
+                        </PanelCollection>
+					</dx:ASPxCallbackPanel>
+                   
+                    <dx:ASPxPopupControl runat="server" ID="pcxDash" CloseAction="None" ClientInstanceName="dxdash" 
+                        PopupAlignCorrection="Disabled" LoadContentViaCallback="OnFirstShow" Modal="True" 
+                        ShowHeader="False" ShowShadow="False" ShowFooter="True" ShowSizeGrip="False"
+                        OnWindowCallback="pcxDash_WindowCallback">
+                        <Windows>
+                            <dx:PopupWindow ShowFooter="True" FooterText="" Name="Insert" AutoUpdatePosition="False" CloseAction="None">
+
+                                <FooterContentTemplate>
+                                    
+                                    <uc1:PopupFooter ID="PopupFooter1" runat="server" />
+                                    
+                                </FooterContentTemplate>
+
+                                <ContentCollection>
+                                    <dx:PopupControlContentControl runat="server">
+                                        <uc2:PostControl ID="PostControl1" runat="server" />
+                                    </dx:PopupControlContentControl>
+                                </ContentCollection>
+
+                            </dx:PopupWindow>
+                            <dx:PopupWindow ShowFooter="True" FooterText="" Name="Edit" AutoUpdatePosition="False" CloseAction="None">
+
+                                <FooterContentTemplate>
+                                    
+                                    <uc1:PopupFooter ID="PopupFooter2" runat="server" />
+                                    
+                                </FooterContentTemplate>
+
+                                <ContentCollection>
+                                    <dx:PopupControlContentControl runat="server">
+                                        <uc2:PostControl ID="PostControl2" runat="server" />
+                                    </dx:PopupControlContentControl>
+                                </ContentCollection>
+
+
+                            </dx:PopupWindow>
+                        </Windows>
+                        <ClientSideEvents
+                            Init="function(s, e) {
+												$(window).bind('orientationchange resize', function() { 													
+													wnd = window['wnd'];
+													if (wnd != null && s.IsWindowVisible(wnd)) {
+														s.SetWindowLeft(wnd.index, $('#navContainer').offset().left);
+														s.SetWindowTop(wnd.index, $('#navContainer').offset().top+$('#navContainer').height());														
+														s.SetWindowSize(wnd, $('#navContainer').width(), s.GetWindowHeight(wnd));
+													}
+												});
+										}"
+                            Shown="function(s, e) {
+											if (e.window.name != 'Error') {													
+													s.SetWindowSize(e.window, $('#navContainer').width(), s.GetWindowHeight(e.window));
+													$('.dxbButton_Moderno').filter('.dxbButtonSys').css('height', '');
+											}
+										}"
+                            CloseUp="function(s, e) { window['wnd'] = null; }"
+                            EndCallback="function(s, e) {
+												wnd = window['wnd'];
+												if (wnd != null) {
+													if (dxdash.IsWindowVisible(wnd)) {
+                                                        __aspxControlCollection.ForEachControl(function (ctrl, ctx) {
+															if ((typeof ctrl.cpCallbackCmd !== 'undefined') && (typeof ctrl.PerformCallback !== 'undefined')) {																
+				 												ctrl.PerformCallback(ctrl.cpCallbackCmd);
+															}
+														}, null);
+														dxdash.HideWindow(wnd);
+													}
+													else 
+														dxdash.ShowWindowAtPos(wnd, $('#navContainer').offset().left, $('#navContainer').offset().top+$('#navContainer').height());
+												}
+												}" />
+                    </dx:ASPxPopupControl>
+
+                </nav>
+            </div>
+            <div class="band chief">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <div class="container">
+                        <div class="sixteen columns">
+                            content here..
+                            
+                        </div>
+                    </div>
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="band footer">
+                <footer class="container main">
+                    <div class="sixteen columns">
+                        <span class="disclaimer">Don Wibier &copy; 2013</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        
+    </form>
+</body>
+</html>
