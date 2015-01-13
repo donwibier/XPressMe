@@ -19,7 +19,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btxOK;
+        protected global::DevExpress.Web.ASPxButton btxOK;
         
         /// <summary>
         /// btxCancel control.
@@ -28,6 +28,6 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btxCancel;
+        protected global::DevExpress.Web.ASPxButton btxCancel;
     }
 }

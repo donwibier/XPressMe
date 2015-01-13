@@ -5,14 +5,10 @@ using System.Web;
 using System.Web.UI;
 using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
-using DevExpress.Web.ASPxDataView;
-using XPressMe.Shared;
+using DevExpress.Web;
+using XPressMe.Shared.WebForms;
 using XPressMe.Data.XPressMeDemoDB;
-using DevExpress.Web.ASPxClasses;
-using DevExpress.Web.ASPxUploadControl;
-using DevExpress.Web.ASPxClasses.Internal;
-using DevExpress.Web.ASPxFormLayout;
-using DevExpress.Web.ASPxCloudControl;
+using DevExpress.Web.Internal;
 
 namespace XPressMe.Web.CustomCtrls
 {
@@ -41,13 +37,13 @@ namespace XPressMe.Web.CustomCtrls
             cloud.DataSource = view;
             cloud.DataBind();
         }
-        protected void dxCloudContainer_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        protected void dxCloudContainer_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
         {
             if (e.Parameter == "Reload")
                 DatabindCloud(dxCloud);
         }
 
-        protected void dxCloudContainer_CustomJSProperties(object sender, DevExpress.Web.ASPxClasses.CustomJSPropertiesEventArgs e)
+        protected void dxCloudContainer_CustomJSProperties(object sender, DevExpress.Web.CustomJSPropertiesEventArgs e)
         {
             e.Properties["cpCallbackCmd"] = "Reload";
 

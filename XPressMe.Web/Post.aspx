@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/XPressMe.Master" AutoEventWireup="true" CodeBehind="Post.aspx.cs" Inherits="XPressMe.Web.PostPage" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxDataView" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register src="CustomCtrls/ArticleControl.ascx" tagname="ArticleControl" tagprefix="uc1" %>
 <%@ Register Src="CustomCtrls/CloudWidget.ascx" TagName="TagCloudControl" TagPrefix="uc2" %>
 

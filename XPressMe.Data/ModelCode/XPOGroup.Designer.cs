@@ -14,17 +14,17 @@ using System.ComponentModel;
 namespace XPressMe.Data.XPressMeDemoDB
 {
 
-    public partial class XPOGroup : XPOBaseItem
-    {
-        string fTitle;
-        [Size(50)]
-        public string Title
-        {
-            get { return fTitle; }
-            set { SetPropertyValue<string>("Title", ref fTitle, value); }
-        }
-        [Association(@"XPOPostReferencesXPOGroup", typeof(XPOPost))]
-        public XPCollection<XPOPost> Posts { get { return GetCollection<XPOPost>("Posts"); } }
-    }
+	 public partial class XPOGroup : XPOBaseItem
+	 {
+		  string fTitle;
+		  [Size(50)]
+		  public string Title
+		  {
+				get { return fTitle; }
+				set { SetPropertyValue<string>("Title", ref fTitle, value); }
+		  }
+		  [Association(@"XPOPostReferencesXPOGroup", typeof(XPOPost))]
+		  public XPCollection<XPOPost> Posts { get { return GetCollection<XPOPost>("Posts"); } }
+	 }
 
 }

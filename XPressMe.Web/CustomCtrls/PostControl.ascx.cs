@@ -6,17 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
-using DevExpress.Web.ASPxDataView;
-using XPressMe.Shared;
+using DevExpress.Web;
+using XPressMe.Shared.WebForms;
 using XPressMe.Data.XPressMeDemoDB;
-using DevExpress.Web.ASPxClasses;
-using DevExpress.Web.ASPxUploadControl;
 using System.IO;
-using DevExpress.Web.ASPxClasses.Internal;
-using DevExpress.Web.ASPxFormLayout;
-using DevExpress.Web.ASPxImageGallery;
+using DevExpress.Web.Internal;
 using System.Web.Hosting;
-using DevExpress.Web.ASPxCallbackPanel;
 
 namespace XPressMe.Web.CustomCtrls
 {
@@ -63,7 +58,7 @@ namespace XPressMe.Web.CustomCtrls
 
         }
 
-        protected void upxImages_FilesUploadComplete(object sender, DevExpress.Web.ASPxUploadControl.FilesUploadCompleteEventArgs e)
+        protected void upxImages_FilesUploadComplete(object sender, DevExpress.Web.FilesUploadCompleteEventArgs e)
         {
             ASPxUploadControl ctrl = sender as ASPxUploadControl;
             if (ctrl != null)

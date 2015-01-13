@@ -14,45 +14,50 @@ using System.ComponentModel;
 namespace XPressMe.Data.XPressMeDemoDB
 {
 
-    public partial class XPOPost : XPOBaseItem
-    {
-        string fTitle;
-        [Indexed(Name = @"IDX_Title")]
-        [Size(150)]
-        public string Title
-        {
-            get { return fTitle; }
-            set { SetPropertyValue<string>("Title", ref fTitle, value); }
-        }
-        bool fActive;
-        public bool Active
-        {
-            get { return fActive; }
-            set { SetPropertyValue<bool>("Active", ref fActive, value); }
-        }
-        string fArticle;
-        [Size(SizeAttribute.Unlimited)]
-        public string Article
-        {
-            get { return fArticle; }
-            set { SetPropertyValue<string>("Article", ref fArticle, value); }
-        }
-        XPOGroup fGroup;
-        [Association(@"XPOPostReferencesXPOGroup")]
-        public XPOGroup Group
-        {
-            get { return fGroup; }
-            set { SetPropertyValue<XPOGroup>("Group", ref fGroup, value); }
-        }
-        [PersistentAlias("[Group.Title]")]
-        public string GroupTitle
-        {
-            get { return (string)(EvaluateAlias("GroupTitle")); }
-        }
-        [Association(@"XPOPostReferencesXPOTag", typeof(XPOTag))]
-        public XPCollection<XPOTag> Tags { get { return GetCollection<XPOTag>("Tags"); } }
-        [Association(@"XPOPostAttachmentReferencesXPOPost", typeof(XPOPostAttachment))]
-        public XPCollection<XPOPostAttachment> PostAttachments { get { return GetCollection<XPOPostAttachment>("PostAttachments"); } }
-    }
+	 public partial class XPOPost : XPOBaseItem
+	 {
+		  string fTitle;
+		  [Indexed(Name = @"IDX_Title")]
+		  [Size(150)]
+		  public string Title
+		  {
+				get { return fTitle; }
+				set { SetPropertyValue<string>("Title", ref fTitle, value); }
+		  }
+		  bool fActive;
+		  public bool Active
+		  {
+				get { return fActive; }
+				set { SetPropertyValue<bool>("Active", ref fActive, value); }
+		  }
+		  string fArticle;
+		  [Size(SizeAttribute.Unlimited)]
+		  public string Article
+		  {
+				get { return fArticle; }
+				set { SetPropertyValue<string>("Article", ref fArticle, value); }
+		  }
+		  XPOGroup fGroup;
+		  [Association(@"XPOPostReferencesXPOGroup")]
+		  public XPOGroup Group
+		  {
+				get { return fGroup; }
+				set { SetPropertyValue<XPOGroup>("Group", ref fGroup, value); }
+		  }
+		  [PersistentAlias("[Group.Title]")]
+		  public string GroupTitle
+		  {
+				get { return (string)(EvaluateAlias("GroupTitle")); }
+		  }
+		  [PersistentAlias("[Group.ID]")]
+		  public Guid GroupID
+		  {
+				get { return (Guid)(EvaluateAlias("GroupID")); }
+		  }
+		  [Association(@"XPOPostReferencesXPOTag", typeof(XPOTag))]
+		  public XPCollection<XPOTag> Tags { get { return GetCollection<XPOTag>("Tags"); } }
+		  [Association(@"XPOPostAttachmentReferencesXPOPost", typeof(XPOPostAttachment))]
+		  public XPCollection<XPOPostAttachment> PostAttachments { get { return GetCollection<XPOPostAttachment>("PostAttachments"); } }
+	 }
 
 }

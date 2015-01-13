@@ -19,7 +19,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel.ASPxCallbackPanel dxCloudContainer;
+        protected global::DevExpress.Web.ASPxCallbackPanel dxCloudContainer;
         
         /// <summary>
         /// PanelContent1 control.
@@ -28,7 +28,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPanel.PanelContent PanelContent1;
+        protected global::DevExpress.Web.PanelContent PanelContent1;
         
         /// <summary>
         /// dxCloud control.
@@ -37,6 +37,6 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCloudControl.ASPxCloudControl dxCloud;
+        protected global::DevExpress.Web.ASPxCloudControl dxCloud;
     }
 }

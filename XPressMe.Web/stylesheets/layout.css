@@ -131,17 +131,18 @@ nav .myNavigation li {
 	font-weight: 500!important;
 }
 
-nav .myNavigation li.dxm-item a.dxm-content {
+nav .myNavigation li.dxm-item .dxm-content {
     color: #ffffff;
 }
-nav .myNavigation li.dxm-hovered,
-nav .myNavigation li.dxm-hovered a.dxm-content:hover
-nav .myNavigation li.dxm-selected,
-nav .myNavigation li.dxm-selected a.dxm-content:hover
-{
-	background: #F48120!important;
-	color: #343434;
+nav .myNavigation li.dxm-hovered .dxm-content {
+    color: #343434!important;
 }
+
+nav .myNavigation li.dxm-hovered
+{
+	background: #F48120!important;	
+}
+
 nav .myNavigation li.dxm-selected {
 	border: 1px solid #F48120!important;
 	background: #F48120!important;

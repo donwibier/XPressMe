@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using XPressMe.Shared;
+using XPressMe.Shared.WebForms;
 using XPressMe.Data.XPressMeDemoDB;
-using DevExpress.Web.ASPxClasses;
-using DevExpress.Web.ASPxMenu;
-using DevExpress.Web.ASPxPopupControl;
+using DevExpress.Web;
 using DevExpress.Xpo;
 
 namespace XPressMe.Web
