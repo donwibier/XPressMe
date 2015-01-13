@@ -6,10 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
-using DevExpress.Web.ASPxDataView;
+using DevExpress.Web;
 using XPressMe.Shared;
 using XPressMe.Data.XPressMeDemoDB;
-using DevExpress.Web.ASPxClasses;
 
 namespace XPressMe.Web
 {

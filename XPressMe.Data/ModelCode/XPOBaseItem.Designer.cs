@@ -14,57 +14,57 @@ using System.ComponentModel;
 namespace XPressMe.Data.XPressMeDemoDB
 {
 
-    [NonPersistent]
-    public partial class XPOBaseItem : XPLiteObject
-    {
-        Guid fID;
-        [Key(true)]
-        public Guid ID
-        {
-            get { return fID; }
-            set { SetPropertyValue<Guid>("ID", ref fID, value); }
-        }
-        DateTime fAddStamp;
-        [Indexed(Name = @"IDX_Stamp")]
-        public DateTime AddStamp
-        {
-            get { return fAddStamp; }
-            set { SetPropertyValue<DateTime>("AddStamp", ref fAddStamp, value); }
-        }
-        string fAddIP;
-        [Size(50)]
-        public string AddIP
-        {
-            get { return fAddIP; }
-            set { SetPropertyValue<string>("AddIP", ref fAddIP, value); }
-        }
-        string fAddUser;
-        [Size(50)]
-        public string AddUser
-        {
-            get { return fAddUser; }
-            set { SetPropertyValue<string>("AddUser", ref fAddUser, value); }
-        }
-        DateTime fModStamp;
-        public DateTime ModStamp
-        {
-            get { return fModStamp; }
-            set { SetPropertyValue<DateTime>("ModStamp", ref fModStamp, value); }
-        }
-        string fModIP;
-        [Size(50)]
-        public string ModIP
-        {
-            get { return fModIP; }
-            set { SetPropertyValue<string>("ModIP", ref fModIP, value); }
-        }
-        string fModUser;
-        [Size(50)]
-        public string ModUser
-        {
-            get { return fModUser; }
-            set { SetPropertyValue<string>("ModUser", ref fModUser, value); }
-        }
-    }
+	 [NonPersistent]
+	 public partial class XPOBaseItem : XPLiteObject
+	 {
+		  Guid fID;
+		  [Key(true)]
+		  public Guid ID
+		  {
+				get { return fID; }
+				set { SetPropertyValue<Guid>("ID", ref fID, value); }
+		  }
+		  DateTime fAddStamp;
+		  [Indexed(Name = @"IDX_Stamp")]
+		  public DateTime AddStamp
+		  {
+				get { return fAddStamp; }
+				set { SetPropertyValue<DateTime>("AddStamp", ref fAddStamp, value); }
+		  }
+		  string fAddIP;
+		  [Size(50)]
+		  public string AddIP
+		  {
+				get { return fAddIP; }
+				set { SetPropertyValue<string>("AddIP", ref fAddIP, value); }
+		  }
+		  string fAddUser;
+		  [Size(50)]
+		  public string AddUser
+		  {
+				get { return fAddUser; }
+				set { SetPropertyValue<string>("AddUser", ref fAddUser, value); }
+		  }
+		  DateTime fModStamp;
+		  public DateTime ModStamp
+		  {
+				get { return fModStamp; }
+				set { SetPropertyValue<DateTime>("ModStamp", ref fModStamp, value); }
+		  }
+		  string fModIP;
+		  [Size(50)]
+		  public string ModIP
+		  {
+				get { return fModIP; }
+				set { SetPropertyValue<string>("ModIP", ref fModIP, value); }
+		  }
+		  string fModUser;
+		  [Size(50)]
+		  public string ModUser
+		  {
+				get { return fModUser; }
+				set { SetPropertyValue<string>("ModUser", ref fModUser, value); }
+		  }
+	 }
 
 }

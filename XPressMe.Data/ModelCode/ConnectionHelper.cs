@@ -13,26 +13,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 namespace XPressMe.Data.XPressMeDemoDB
 {
-    public static class ConnectionHelper
-    {
-        public const string ConnectionString = @"XpoProvider=MSSqlServer;data source=.\SQLExpress;integrated security=SSPI;initial catalog=XPressMeDemoDB";
-        public static void Connect(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
-        {
-            XpoDefault.DataLayer = XpoDefault.GetDataLayer(ConnectionString, autoCreateOption);
-            XpoDefault.Session = null;
-        }
-        public static DevExpress.Xpo.DB.IDataStore GetConnectionProvider(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
-        {
-            return XpoDefault.GetConnectionProvider(ConnectionString, autoCreateOption);
-        }
-        public static DevExpress.Xpo.DB.IDataStore GetConnectionProvider(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption, out IDisposable[] objectsToDisposeOnDisconnect)
-        {
-            return XpoDefault.GetConnectionProvider(ConnectionString, autoCreateOption, out objectsToDisposeOnDisconnect);
-        }
-        public static IDataLayer GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
-        {
-            return XpoDefault.GetDataLayer(ConnectionString, autoCreateOption);
-        }
-    }
+	 public static class ConnectionHelper
+	 {
+		  public const string ConnectionString = @"XpoProvider=MSSqlServer;data source=.\SQLExpress;integrated security=SSPI;initial catalog=XPressMeDemoDB";
+		  public static void Connect(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
+		  {
+				XpoDefault.DataLayer = XpoDefault.GetDataLayer(ConnectionString, autoCreateOption);
+				XpoDefault.Session = null;
+		  }
+		  public static DevExpress.Xpo.DB.IDataStore GetConnectionProvider(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
+		  {
+				return XpoDefault.GetConnectionProvider(ConnectionString, autoCreateOption);
+		  }
+		  public static DevExpress.Xpo.DB.IDataStore GetConnectionProvider(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption, out IDisposable[] objectsToDisposeOnDisconnect)
+		  {
+				return XpoDefault.GetConnectionProvider(ConnectionString, autoCreateOption, out objectsToDisposeOnDisconnect);
+		  }
+		  public static IDataLayer GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption autoCreateOption)
+		  {
+				return XpoDefault.GetDataLayer(ConnectionString, autoCreateOption);
+		  }
+	 }
 
 }

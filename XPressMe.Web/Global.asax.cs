@@ -4,12 +4,12 @@ using System;
     using System.Web;
     using System.Web.Security;
     using System.Web.SessionState;
-    using DevExpress.Web.ASPxClasses;
+    using DevExpress.Web;
 
     namespace XPressMe.Web {
         public class Global_asax : System.Web.HttpApplication {
             void Application_Start(object sender, EventArgs e) {
-                DevExpress.Web.ASPxClasses.ASPxWebControl.CallbackError += new EventHandler(Application_Error);
+                DevExpress.Web.ASPxWebControl.CallbackError += new EventHandler(Application_Error);
             }
 
             void Application_End(object sender, EventArgs e) {

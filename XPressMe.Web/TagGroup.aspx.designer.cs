@@ -28,7 +28,7 @@ namespace XPressMe.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDataView.ASPxDataView dxPosts;
+        protected global::DevExpress.Web.ASPxDataView dxPosts;
         
         /// <summary>
         /// TagCloudControl1 control.

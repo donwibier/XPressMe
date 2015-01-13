@@ -7,8 +7,7 @@ using System.Web.UI.WebControls;
 using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
 using DevExpress.Data.Filtering;
-using DevExpress.Web.ASPxDataView;
-using DevExpress.Web.ASPxClasses;
+using DevExpress.Web;
 using XPressMe.Shared;
 using XPressMe.Data.XPressMeDemoDB;
 

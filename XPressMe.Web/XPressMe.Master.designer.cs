@@ -46,7 +46,7 @@ namespace XPressMe.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel.ASPxCallbackPanel navContainer;
+        protected global::DevExpress.Web.ASPxCallbackPanel navContainer;
         
         /// <summary>
         /// dxMainMenu control.
@@ -55,7 +55,7 @@ namespace XPressMe.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxMenu.ASPxMenu dxMainMenu;
+        protected global::DevExpress.Web.ASPxMenu dxMainMenu;
         
         /// <summary>
         /// pcxDash control.
@@ -64,7 +64,7 @@ namespace XPressMe.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcxDash;
+        protected global::DevExpress.Web.ASPxPopupControl pcxDash;
         
         /// <summary>
         /// PostControl1 control.

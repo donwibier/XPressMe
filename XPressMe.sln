@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{00768E
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPressMe.Mvc", "XPressMe.Mvc\XPressMe.Mvc.csproj", "{3087CB29-34D7-4C98-B59A-18339FA2FFAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{65582E58-EC5F-4086-8E73-BC86CC5E6404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65582E58-EC5F-4086-8E73-BC86CC5E6404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65582E58-EC5F-4086-8E73-BC86CC5E6404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3087CB29-34D7-4C98-B59A-18339FA2FFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3087CB29-34D7-4C98-B59A-18339FA2FFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3087CB29-34D7-4C98-B59A-18339FA2FFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3087CB29-34D7-4C98-B59A-18339FA2FFAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

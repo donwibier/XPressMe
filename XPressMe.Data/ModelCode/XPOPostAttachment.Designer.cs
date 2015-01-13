@@ -14,35 +14,40 @@ using System.ComponentModel;
 namespace XPressMe.Data.XPressMeDemoDB
 {
 
-    public partial class XPOPostAttachment : XPOBaseItem
-    {
-        string fFileName;
-        [Size(250)]
-        public string FileName
-        {
-            get { return fFileName; }
-            set { SetPropertyValue<string>("FileName", ref fFileName, value); }
-        }
-        string fMimeType;
-        [Size(50)]
-        public string MimeType
-        {
-            get { return fMimeType; }
-            set { SetPropertyValue<string>("MimeType", ref fMimeType, value); }
-        }
-        byte[] fData;
-        public byte[] Data
-        {
-            get { return fData; }
-            set { SetPropertyValue<byte[]>("Data", ref fData, value); }
-        }
-        XPOPost fPost;
-        [Association(@"XPOPostAttachmentReferencesXPOPost")]
-        public XPOPost Post
-        {
-            get { return fPost; }
-            set { SetPropertyValue<XPOPost>("Post", ref fPost, value); }
-        }
-    }
+	 public partial class XPOPostAttachment : XPOBaseItem
+	 {
+		  string fFileName;
+		  [Size(250)]
+		  public string FileName
+		  {
+				get { return fFileName; }
+				set { SetPropertyValue<string>("FileName", ref fFileName, value); }
+		  }
+		  string fMimeType;
+		  [Size(50)]
+		  public string MimeType
+		  {
+				get { return fMimeType; }
+				set { SetPropertyValue<string>("MimeType", ref fMimeType, value); }
+		  }
+		  byte[] fData;
+		  public byte[] Data
+		  {
+				get { return fData; }
+				set { SetPropertyValue<byte[]>("Data", ref fData, value); }
+		  }
+		  XPOPost fPost;
+		  [Association(@"XPOPostAttachmentReferencesXPOPost")]
+		  public XPOPost Post
+		  {
+				get { return fPost; }
+				set { SetPropertyValue<XPOPost>("Post", ref fPost, value); }
+		  }
+		  [PersistentAlias("[Post.ID]")]
+		  public Guid PostID
+		  {
+				get { return (Guid)(EvaluateAlias("PostID")); }
+		  }
+	 }
 
 }

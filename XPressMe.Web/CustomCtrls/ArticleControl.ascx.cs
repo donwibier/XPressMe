@@ -7,11 +7,9 @@ using System.Web.UI.WebControls;
 using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
 using DevExpress.Data.Filtering;
-using DevExpress.Web.ASPxDataView;
-using DevExpress.Web.ASPxClasses;
-using XPressMe.Shared;
+using DevExpress.Web;
+using XPressMe.Shared.WebForms;
 using XPressMe.Data.XPressMeDemoDB;
-using DevExpress.Web.ASPxImageGallery;
 
 namespace XPressMe.Web.CustomCtrls
 {

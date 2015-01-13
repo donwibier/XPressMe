@@ -19,7 +19,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.ASPxFormLayout frmLayout;
+        protected global::DevExpress.Web.ASPxFormLayout frmLayout;
         
         /// <summary>
         /// LayoutItemNestedControlContainer1 control.
@@ -28,7 +28,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
         /// tbxTitle control.
@@ -37,7 +37,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox tbxTitle;
+        protected global::DevExpress.Web.ASPxTextBox tbxTitle;
         
         /// <summary>
         /// LayoutItemNestedControlContainer2 control.
@@ -46,7 +46,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer2;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer2;
         
         /// <summary>
         /// cbxActive control.
@@ -55,7 +55,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxCheckBox cbxActive;
+        protected global::DevExpress.Web.ASPxCheckBox cbxActive;
         
         /// <summary>
         /// LayoutItemNestedControlContainer3 control.
@@ -64,7 +64,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer3;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer3;
         
         /// <summary>
         /// cbxGroup control.
@@ -73,7 +73,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cbxGroup;
+        protected global::DevExpress.Web.ASPxComboBox cbxGroup;
         
         /// <summary>
         /// LayoutItemNestedControlContainer4 control.
@@ -82,7 +82,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
         
         /// <summary>
         /// tkbxTags control.
@@ -91,7 +91,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTokenBox tkbxTags;
+        protected global::DevExpress.Web.ASPxTokenBox tkbxTags;
         
         /// <summary>
         /// LayoutItemNestedControlContainer5 control.
@@ -100,7 +100,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer5;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer5;
         
         /// <summary>
         /// mmoArticle control.
@@ -109,7 +109,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxMemo mmoArticle;
+        protected global::DevExpress.Web.ASPxMemo mmoArticle;
         
         /// <summary>
         /// LayoutItemNestedControlContainer6 control.
@@ -118,7 +118,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer6;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer6;
         
         /// <summary>
         /// upxImages control.
@@ -127,7 +127,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxUploadControl.ASPxUploadControl upxImages;
+        protected global::DevExpress.Web.ASPxUploadControl upxImages;
         
         /// <summary>
         /// LayoutItemNestedControlContainer7 control.
@@ -136,7 +136,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout.LayoutItemNestedControlContainer LayoutItemNestedControlContainer7;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer7;
         
         /// <summary>
         /// PreviewSlider control.
@@ -145,7 +145,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxImageGallery.ASPxImageGallery PreviewSlider;
+        protected global::DevExpress.Web.ASPxImageGallery PreviewSlider;
         
         /// <summary>
         /// DSGroups control.

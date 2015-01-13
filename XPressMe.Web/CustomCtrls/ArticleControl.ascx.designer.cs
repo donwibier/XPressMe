@@ -19,7 +19,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel.ASPxRoundPanel rpxPostContainer;
+        protected global::DevExpress.Web.ASPxRoundPanel rpxPostContainer;
         
         /// <summary>
         /// tagPanel control.
@@ -55,7 +55,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink lnkMore;
+        protected global::DevExpress.Web.ASPxHyperLink lnkMore;
         
         /// <summary>
         /// galleryPanel control.
@@ -73,7 +73,7 @@ namespace XPressMe.Web.CustomCtrls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxImageGallery.ASPxImageGallery ASPxImageSlider1;
+        protected global::DevExpress.Web.ASPxImageGallery ASPxImageSlider1;
         
         /// <summary>
         /// DSAttachments control.

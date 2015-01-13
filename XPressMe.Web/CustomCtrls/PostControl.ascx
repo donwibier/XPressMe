@@ -1,19 +1,20 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PostControl.ascx.cs" Inherits="XPressMe.Web.CustomCtrls.PostControl" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPanel" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxCallbackPanel" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxImageGallery" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxImageSlider" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-<%@ Register Assembly="DevExpress.Xpo.v14.1.Web, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Xpo" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxUploadControl" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxFormLayout" TagPrefix="dx" %>
+
+
+
+<%@ Register Assembly="DevExpress.Xpo.v14.2.Web, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Xpo" TagPrefix="dx" %>
+
+
+
 
 <div class="popupPostControl">
 
 <dx:ASPxFormLayout ID="frmLayout" runat="server" Width="100%" 
-        ClientInstanceName="quickPostForm" RequiredMarkDisplayMode="None">
+        ClientInstanceName="quickPostForm" 
+		  RequiredMarkDisplayMode="None">
 		<Items>
 			<dx:LayoutItem Caption="Title" Name="Title">
 				<LayoutItemNestedControlCollection>
@@ -37,8 +38,11 @@
 			<dx:LayoutItem Caption="Group" Name="Group">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server" SupportsDisabledAttribute="True">
-						<dx:ASPxComboBox ID="cbxGroup" runat="server" DataSourceID="DSGroups" NullText="Select a group"
-							TextField="Title" ValueField="ID" Width="100%" DropDownStyle="DropDown" AutoResizeWithContainer="True">
+						<dx:ASPxComboBox ID="cbxGroup" runat="server" 
+							 DataSourceID="DSGroups" NullText="Select a group"
+							 TextField="Title" ValueField="ID" Width="100%" 
+							 DropDownStyle="DropDown" 
+							 AutoResizeWithContainer="True">
 							<ValidationSettings ErrorDisplayMode="None">
 							</ValidationSettings>
 						</dx:ASPxComboBox>
@@ -48,8 +52,11 @@
 			<dx:LayoutItem Name="Tags">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server" SupportsDisabledAttribute="True">
-						<dx:ASPxTokenBox ID="tkbxTags" runat="server" AllowMouseWheel="True" AutoResizeWithContainer="True" DataSourceID="DSTags" IncrementalFilteringMode="Contains" NullText="Select tags"
-							TextField="Name" Tokens="" ValueField="ID" Width="100%">
+						<dx:ASPxTokenBox ID="tkbxTags" runat="server" 
+							AllowMouseWheel="True" AutoResizeWithContainer="True" 
+							 DataSourceID="DSTags"
+							 IncrementalFilteringMode="Contains" NullText="Select tags"
+							 TextField="Name" Tokens="" ValueField="ID" Width="100%">
 						</dx:ASPxTokenBox>
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
