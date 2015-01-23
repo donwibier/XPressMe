@@ -1,0 +1,251 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:200.400,600);
+/* get some web-fonts */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+	h1 { line-height: 49px; margin-bottom: 14px;}
+	h2 { line-height: 42px; margin-bottom: 7px; }
+	h3 { line-height: 35px; margin-bottom: 7px; }
+	h4 { line-height: 28px; margin-bottom: 7px; }
+	h5 { line-height: 21px; }
+
+	p { margin: 0 0 21px 0; }
+	p.lead { line-height: 28px; }
+
+
+/*	Blockquotes  */
+	blockquote, blockquote p { line-height: 21px;}
+	blockquote { margin: 0 0 21px; padding: 7px 20px 0 19px; }
+
+	hr { margin: 14px 0 28px;}
+	
+/* #Lists (baseline corrections)  */
+	ul, ol { margin-bottom: 21px; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 7px 0 7px 30px; }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 7px; }
+	li { line-height: 21px; margin-bottom: 14px; }
+
+* 
+{ 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+img {
+	max-width: 100%;
+}
+form	{
+	min-height:100%;
+	height:100%;
+    padding: 0;
+    margin: 0;
+}
+
+.band {
+	background: #f8f8f8;
+	padding: 0 0 14px 0;	
+}
+
+.band.navigation {
+	background: #343434;
+	padding: 0;
+	color: #e0e0e0; 
+}
+
+.band.footer {
+	background: #343434;
+	padding: 20px 0 14px 0;			
+	color: #e0e0e0; 
+}
+.band.bottom {
+	background: #343434;	
+	padding: 28px 0 7px 0;
+	color: #e0e0e0;
+}
+
+header.main {
+	padding: 35px 0;
+}
+
+header h1.logo {
+	margin: 7px 0 0 0;
+	float: left;
+}
+ header h1.logo a {
+        width: 250px;
+        height: 40px;
+        display: block;
+        background: url(../images/logo.svg) no-repeat 0 0;
+        background-size: 250px 40px;
+        font: 0/0 a;
+        -webkit-text-shadow: none;
+        text-shadow: none;
+        color: transparent;
+    }
+/* #Site Styles
+================================================== */
+.dxmLite_Moderno .dxm-horizontal .dxm-separator {
+    padding: 0px 0px 0px 0px!important;
+}
+.contentContainer {
+    padding: 5px 5px 5px 5px;
+    background-color: #f8f8f8;    
+    
+}
+.contentContainer h2, .contentContainer.h3 {
+	font: 18px "Roboto", sans-serif;
+	font-weight: 600;
+    color: #343434;
+}
+
+.widgetContainer h4{
+	font: 16px "Roboto", sans-serif;
+	font-weight: 600;
+    color: #343434;
+}
+nav .myNavigation.dxm-horizontal,
+nav .myNavigation li.dxm-separator b 
+{
+	background:none!important;
+}
+
+nav .myNavigation li {	
+	padding: 5px 0px 5px 0px;
+	margin-bottom: 0px; 
+	font: 14px/21px "Roboto", sans-serif!important;    
+	font-weight: 500!important;
+}
+
+
+nav .myNavigation li.dxm-item .dxm-content {
+    color: #ffffff;
+}
+nav .myNavigation li.dxm-hovered .dxm-content {
+    color: #343434!important;
+}
+
+nav .myNavigation li.dxm-hovered
+{
+	background: #F48120!important;	
+}
+
+nav .myNavigation li.dxm-selected {
+	border: 1px solid #F48120!important;
+	background: #F48120!important;
+	color: #ffffff;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+.popupFooter{
+    width: 100%;
+    min-height: 53px;
+    margin-bottom: 10px;
+}
+.popupFooterSpacer{
+    width: 50%;
+    float:left;
+}
+.popupFooterButtonOK{
+    width: 25%;
+    float:left;
+    padding-right: 10px;
+}
+.popupFooterButtonCancel{
+    width: 25%;
+    float:left;
+}
+
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+        .popupFooterSpacer {
+            display: none;
+        }
+        .popupFooterButtonOK{
+            width: 50%;
+        }
+        .popupFooterButtonCancel{
+            width: 50%;
+        }
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+        .popupFooterSpacer {
+			display: none;
+		}
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+        header h1.logo a {
+            width: 125px;
+            height: 20px;
+            background-size: 125px 20px;
+        }
+
+        .popupFooterSpacer {
+            display: none;
+        }
+        .popupFooterButtonOK{
+            width: 100%;
+            padding-right: 0px;
+            padding-bottom: 10px;
+        }
+        .popupFooterButtonCancel{
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+	}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/

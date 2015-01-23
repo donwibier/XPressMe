@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>    
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="@Url.Content("~/stylesheets/base.css")">
+    <link rel="stylesheet" href="@Url.Content("~/stylesheets/skeleton.css" )">
+    <link rel="stylesheet" href="@Url.Content("~/stylesheets/layout.css" )">
+
+    <!--[if lt IE 9]>
+       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="@Url.Content("~/images/favicon.ico")">
+    <link rel="apple-touch-icon" href="@Url.Content("~/images/apple-touch-icon.png")">
+    <link rel="apple-touch-icon" sizes="72x72" href="@Url.Content("~/images/apple-touch-icon-72x72.png")">
+    <link rel="apple-touch-icon" sizes="114x114" href="@Url.Content("~/images/apple-touch-icon-114x114.png")">
+
+    @Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.GridView },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.TreeList },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Spreadsheet }
+)
+</head>
+
+<body>
+    <script src="@Url.Content("~/Scripts/jquery-2.1.3.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>
+    <script src="@Url.Content("~/Scripts/xpress-me.js")"></script>
+
+    @Html.DevExpress().GetScripts(
+		  new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+		  new Script { ExtensionSuite = ExtensionSuite.HtmlEditor },
+		  new Script { ExtensionSuite = ExtensionSuite.GridView },
+		  new Script { ExtensionSuite = ExtensionSuite.PivotGrid },
+		  new Script { ExtensionSuite = ExtensionSuite.Editors },
+		  new Script { ExtensionSuite = ExtensionSuite.Chart },
+		  new Script { ExtensionSuite = ExtensionSuite.Scheduler },
+		  new Script { ExtensionSuite = ExtensionSuite.TreeList },
+		  new Script { ExtensionSuite = ExtensionSuite.Spreadsheet }
+	 )
+
+
+    <div class="page">
+        <div class="band header">
+            <header class="container">
+                <div class="sixteen columns">
+                    <h1 class="logo"><a href="@Url.Content("~/")">XPressMe</a></h1>
+                    <a class="banner" href="#"></a>
+                </div>
+            </header>
+        </div>
+        <div class="band navigation">
+            <nav class="container primary">                
+                @Html.Action("NavContainerCallback")
+                @Html.Action("DashboardPopup", new { ID = ViewData["PostID"] })
+                @*<dx:ASPxCallbackPanel runat="server" ID="navContainer" ClientIDMode="Static" CssClass="widgetContainer" Width="100%"
+                                      OnCallback="navContainer_Callback"
+                                      OnCustomJSProperties="navContainer_CustomJSProperties"
+                                      ShowLoadingPanel="False">
+                    <panelcollection>
+                        <dx:panelcontent runat="server">
+                            <dx:ASPxMenu ID="dxMainMenu" runat="server" ItemAutoWidth="false" CssClass="myNavigation" Width="100%">
+                                <items>
+                                    <dx:menuitem text="+" name="Insert">
+                                        <itemstyle forecolor="#ffffff"></itemstyle>
+                                    </dx:menuitem>
+                                    <dx:menuitem text="#" name="Edit">
+                                        <itemstyle forecolor="#ffffff"></itemstyle>
+                                    </dx:menuitem>
+                                </items>
+                                <clientsideevents itemclick="mainMenuItemClick" />
+                            </dx:ASPxMenu>
+                        </dx:panelcontent>
+                    </panelcollection>
+                </dx:ASPxCallbackPanel>*@
+
+                @*<dx:ASPxPopupControl runat="server" ID="pcxDash" CloseAction="None"
+                                     ClientInstanceName="dxdash" PopupAlignCorrection="Disabled"
+                                     LoadContentViaCallback="OnFirstShow" Modal="True"
+                                     ShowHeader="False" ShowShadow="False" ShowFooter="True"
+                                     ShowSizeGrip="False"
+                                     OnWindowCallback="pcxDash_WindowCallback">
+                    <windows>
+                        <dx:popupwindow showfooter="True" footertext="" name="Insert" autoupdateposition="False" closeaction="None">
+                            <footercontenttemplate>
+                                <uc1:PopupFooter ID="PopupFooter1" runat="server" />
+                            </footercontenttemplate>
+                            <contentcollection>
+                                <dx:popupcontrolcontentcontrol runat="server">
+                                    <uc2:PostControl ID="PostControl1" runat="server" />
+                                </dx:popupcontrolcontentcontrol>
+                            </contentcollection>
+                        </dx:popupwindow>
+                    </windows>
+                    <clientsideevents init="popupCtrlInit"
+                                      shown="popupCtrlShown"
+                                      endcallback="popupCtrlEndCallback" />
+                </dx:ASPxPopupControl>*@
+            </nav>
+        </div>
+        <div class="band chief">
+            @RenderBody()
+        </div>
+        <div class="band footer">
+            <footer class="container main">
+                <div class="sixteen columns">
+                    <span class="disclaimer">Don Wibier &copy; 2013</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+
+
+
+
+
+
+</html>

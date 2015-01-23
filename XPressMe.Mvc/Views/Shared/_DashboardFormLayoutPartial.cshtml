@@ -1,0 +1,55 @@
+﻿@model XPressMe.Mvc.Models.PostModel
+
+@Html.DevExpress().FormLayout(frmSettings => {
+	frmSettings.Name = "quickPostForm";
+	frmSettings.Width = Unit.Percentage(100);
+	frmSettings.RequiredMarkDisplayMode = RequiredMarkMode.None;
+	frmSettings.SettingsItems.ShowCaption = DefaultBoolean.True;
+	frmSettings.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Left;
+	frmSettings.SettingsItemHelpTexts.Position = HelpTextPosition.Bottom;
+
+	frmSettings.Items.Add(m => m.Title, itemSettings => {
+		itemSettings.NestedExtensionType = FormLayoutNestedExtensionItemType.TextBox;
+		itemSettings.Caption = "Title";
+		itemSettings.Width = Unit.Percentage(100);
+		TextBoxSettings ctrlSettings = (TextBoxSettings)itemSettings.NestedExtensionSettings;
+		ctrlSettings.Properties.ValidationSettings.RequiredField.IsRequired = true;
+		//ctrlSettings.Properties.Width = Unit.Percentage(100);
+		ctrlSettings.Width = Unit.Percentage(100);
+	});
+	frmSettings.Items.Add(m => m.Active, itemSettings => {
+		itemSettings.NestedExtensionType = FormLayoutNestedExtensionItemType.CheckBox;
+		itemSettings.Caption = "Is Active";
+		itemSettings.ShowCaption = DefaultBoolean.False;
+		itemSettings.Width = Unit.Percentage(100);
+		CheckBoxSettings ctrlSettings = (CheckBoxSettings)itemSettings.NestedExtensionSettings;
+		ctrlSettings.Text = "Is Active";
+	});
+	frmSettings.Items.Add(m => m.Group, itemSettings => {
+		itemSettings.NestedExtensionType = FormLayoutNestedExtensionItemType.ComboBox;
+		itemSettings.Caption = "Group";
+		itemSettings.Width = Unit.Percentage(100);
+		ComboBoxSettings ctrlSettings = (ComboBoxSettings)itemSettings.NestedExtensionSettings;
+		ctrlSettings.Width = Unit.Percentage(100);
+		//ctrlSettings.Properties.Width = Unit.Percentage(100);
+		ctrlSettings.Properties.ValidationSettings.RequiredField.IsRequired = true;
+		ctrlSettings.Properties.NullText = "Select a group";
+		ctrlSettings.Properties.DataSource = Model.LookupGroups;
+		ctrlSettings.Properties.ValueField = "ID";
+		ctrlSettings.Properties.TextField = "Title";
+		ctrlSettings.Properties.DropDownStyle = DropDownStyle.DropDown;
+	});
+	frmSettings.Items.Add(m => m.Article, itemSettings => {
+		itemSettings.NestedExtensionType = FormLayoutNestedExtensionItemType.Memo;
+		itemSettings.Caption = "Article";
+		itemSettings.Width = Unit.Percentage(100);
+		MemoSettings ctrlSettings = (MemoSettings)itemSettings.NestedExtensionSettings;
+		ctrlSettings.Properties.Width = Unit.Percentage(100);
+		ctrlSettings.Width = Unit.Percentage(100);
+		ctrlSettings.Properties.ValidationSettings.RequiredField.IsRequired = true;
+		ctrlSettings.Properties.NullText = "Enter your article text";
+	});
+
+	
+
+}).Bind(Model).GetHtml()
