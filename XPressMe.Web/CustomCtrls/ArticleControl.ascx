@@ -7,53 +7,53 @@
 
 
 <dx:ASPxRoundPanel ID="rpxPostContainer" runat="server" Width="100%" HeaderText='<%# Eval("Title") %>'>
-    <PanelCollection>
-        <dx:PanelContent runat="server">	        
-	        <div class="metaContainer">
-		        <span><%# String.Format("Posted at {0:ddd, MM d, yyyy HH:mm} by ", Eval("AddStamp"), Eval("AddUser")) %></span><br />
-		        <span><%# String.Format("Group: {0}", Eval("GroupTitle")) %></span>
-	        </div>
-	        <asp:Panel runat="server" ID="tagPanel">
-		        <span>Tags:
+	 <PanelCollection>
+		  <dx:PanelContent runat="server">
+				<div class="metaContainer">
+					 <span><%# String.Format("Posted at {0:ddd, MM d, yyyy HH:mm} by ", Eval("AddStamp"), Eval("AddUser")) %></span><br />
+					 <span><%# String.Format("Group: {0}", Eval("GroupTitle")) %></span>
+				</div>
+				<asp:Panel runat="server" ID="tagPanel">
+					 <span>Tags:
 			        <asp:Repeater runat="server" ID="rptTags" DataSource='<%# Eval("Tags") %>'>
-				        <ItemTemplate><%# Eval("Name") %></ItemTemplate>
-				        <SeparatorTemplate>,</SeparatorTemplate>
-			        </asp:Repeater>
-		        </span>
-	        </asp:Panel>
+							<ItemTemplate><%# Eval("Name") %></ItemTemplate>
+							<SeparatorTemplate>,</SeparatorTemplate>
+					  </asp:Repeater>
+					 </span>
+				</asp:Panel>
 
-	        <p><%# Eval("Article") %></p>
-	        <asp:Panel runat="server" ID="linkPanel" CssClass="floatRight">
-		        <dx:ASPxHyperLink runat="server" ID="lnkMore" Text="More..." NavigateUrl='<%# String.Format("~/Post.aspx?ID={0}", Eval("ID")) %>' />
-	        </asp:Panel>
-	        <asp:Panel runat="server" ID="galleryPanel" Width="100%">
-                <dx:ASPxImageGallery ID="ASPxImageSlider1" runat="server" EnableViewState="False"
-                    DataSourceID="DSAttachments" 
-			        NameField="FileName" 
-                    BinaryImageCacheFolder="~\Temp\Thumbs" 
-                    ImageContentBytesField="Data"
-			        Width="100%" 
-                    AllowPaging="False" Layout="Flow" 
-                    OnDataBound="ASPxImageSlider1_DataBound">
+				<p><%# Eval("Article") %></p>
+				<asp:Panel runat="server" ID="linkPanel" CssClass="floatRight">
+					 <dx:ASPxHyperLink runat="server" ID="lnkMore" Text="More..." NavigateUrl='<%# String.Format("~/Post.aspx?ID={0}", Eval("ID")) %>' />
+				</asp:Panel>
+				<asp:Panel runat="server" ID="galleryPanel" Width="100%">
+					 <dx:ASPxImageGallery ID="ASPxImageSlider1" runat="server" EnableViewState="False"
+						  DataSourceID="DSAttachments"
+						  NameField="FileName"
+						  BinaryImageCacheFolder="~\Temp\Thumbs"
+						  ImageContentBytesField="Data"
+						  Width="100%"
+						  AllowPaging="False" Layout="Flow"
+						  OnDataBound="ASPxImageSlider1_DataBound">
 
-			        <SettingsFolder ImageCacheFolder="~\Temp\Thumbs" />
-			        <SettingsFullscreenViewer ImageSizeMode="FillAndCrop" />			
-			        <Styles>
-				        <Content>				
-					        <Border BorderStyle="None" />
-				        </Content>
-			        </Styles>
-		        </dx:ASPxImageGallery>
-		
+						  <SettingsFolder ImageCacheFolder="~\Temp\Thumbs" />
+						  <SettingsFullscreenViewer ImageSizeMode="FillAndCrop" />
+						  <Styles>
+								<Content>
+									 <Border BorderStyle="None" />
+								</Content>
+						  </Styles>
+					 </dx:ASPxImageGallery>
 
-	        </asp:Panel>
-        </dx:PanelContent>
-    </PanelCollection>
+
+				</asp:Panel>
+		  </dx:PanelContent>
+	 </PanelCollection>
 </dx:ASPxRoundPanel>
 <dx:XpoDataSource ID="DSAttachments" runat="server" Criteria="[Post!Key] = ?" OnInit="DSAttachments_Init" TypeName="XPressMe.Data.XPressMeDemoDB.XPOPostAttachment">
-	<CriteriaParameters>
-		<asp:QueryStringParameter Name="id" QueryStringField="ID" />
-	</CriteriaParameters>
+	 <CriteriaParameters>
+		  <asp:QueryStringParameter Name="id" QueryStringField="ID" />
+	 </CriteriaParameters>
 </dx:XpoDataSource>
 
 

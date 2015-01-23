@@ -2,9 +2,6 @@
 
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-
-
-
 <%@ Register src="CustomCtrls/PopupFooter.ascx" tagname="PopupFooter" tagprefix="uc1" %>
 <%@ Register src="CustomCtrls/PostControl.ascx" tagname="PostControl" tagprefix="uc2" %>
 
@@ -44,12 +41,14 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    <script src="Scripts/jquery-2.1.1.js"></script>
+    
      <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="frm" runat="server">
+	 <script src="Scripts/jquery-2.1.1.js"></script>
+	 <script src="Scripts/xpress-me.js"></script>
+	 <form id="frm" runat="server">
         <div class="page">
             <div class="band header">
                 <header class="container">
@@ -62,7 +61,9 @@
             <div class="band navigation">
                 <nav class="container primary">
                     <dx:ASPxCallbackPanel runat="server" ID="navContainer" ClientIDMode="Static" CssClass="widgetContainer" Width="100%"
-						OnCallback="navContainer_Callback" OnCustomJSProperties="navContainer_CustomJSProperties" ShowLoadingPanel="False">
+								OnCallback="navContainer_Callback" 
+								OnCustomJSProperties="navContainer_CustomJSProperties" 
+								ShowLoadingPanel="False">
                         <PanelCollection>
                             <dx:PanelContent runat="server">
                                 <dx:ASPxMenu ID="dxMainMenu" runat="server" ItemAutoWidth="false" CssClass="myNavigation" Width="100%">
@@ -74,98 +75,34 @@
                                             <ItemStyle ForeColor="#ffffff"></ItemStyle>
                                         </dx:MenuItem>
                                     </Items>
-                                    <ClientSideEvents ItemClick="function(s, e) {
-											        if (e.item.name != '') 
-											        {
-												        wnd = dxdash.GetWindowByName(e.item.name);
-												        if (wnd != null) {												
-													        if (!dxdash.IsWindowVisible(wnd)) {														
-														        window['wnd'] = wnd;
-														        dxdash.PerformWindowCallback(wnd, e.item.name);														
-													        }
-													        else 
-														        dxdash.HideWindow(wnd);
-												        }
-												        e.htmlEvent.cancelBubble = true;
-												        e.processOnServer = false;
-												        return false;
-											        }								
-										        }" />
+                                    <ClientSideEvents ItemClick="mainMenuItemClick" />
                                 </dx:ASPxMenu>        
                             </dx:PanelContent>
                         </PanelCollection>
-					</dx:ASPxCallbackPanel>
+						  </dx:ASPxCallbackPanel>
                    
-                    <dx:ASPxPopupControl runat="server" ID="pcxDash" CloseAction="None" ClientInstanceName="dxdash" 
-                        PopupAlignCorrection="Disabled" LoadContentViaCallback="OnFirstShow" Modal="True" 
-                        ShowHeader="False" ShowShadow="False" ShowFooter="True" ShowSizeGrip="False"
+                    <dx:ASPxPopupControl runat="server" ID="pcxDash" CloseAction="None" 
+								ClientInstanceName="dxdash" PopupAlignCorrection="Disabled" 
+								LoadContentViaCallback="OnFirstShow" Modal="True" 
+                        ShowHeader="False" ShowShadow="False" ShowFooter="True" 
+								ShowSizeGrip="False" 
                         OnWindowCallback="pcxDash_WindowCallback">
                         <Windows>
                             <dx:PopupWindow ShowFooter="True" FooterText="" Name="Insert" AutoUpdatePosition="False" CloseAction="None">
-
-                                <FooterContentTemplate>
-                                    
-                                    <uc1:PopupFooter ID="PopupFooter1" runat="server" />
-                                    
+                                <FooterContentTemplate>                                    
+                                    <uc1:PopupFooter ID="PopupFooter1" runat="server" />                                    
                                 </FooterContentTemplate>
-
                                 <ContentCollection>
                                     <dx:PopupControlContentControl runat="server">
                                         <uc2:PostControl ID="PostControl1" runat="server" />
                                     </dx:PopupControlContentControl>
                                 </ContentCollection>
-
-                            </dx:PopupWindow>
-                            <dx:PopupWindow ShowFooter="True" FooterText="" Name="Edit" AutoUpdatePosition="False" CloseAction="None">
-
-                                <FooterContentTemplate>
-                                    
-                                    <uc1:PopupFooter ID="PopupFooter2" runat="server" />
-                                    
-                                </FooterContentTemplate>
-
-                                <ContentCollection>
-                                    <dx:PopupControlContentControl runat="server">
-                                        <uc2:PostControl ID="PostControl2" runat="server" />
-                                    </dx:PopupControlContentControl>
-                                </ContentCollection>
-
-
-                            </dx:PopupWindow>
+                            </dx:PopupWindow>                           
                         </Windows>
                         <ClientSideEvents
-                            Init="function(s, e) {
-												$(window).bind('orientationchange resize', function() { 													
-													wnd = window['wnd'];
-													if (wnd != null && s.IsWindowVisible(wnd)) {
-														s.SetWindowLeft(wnd.index, $('#navContainer').offset().left);
-														s.SetWindowTop(wnd.index, $('#navContainer').offset().top+$('#navContainer').height());														
-														s.SetWindowSize(wnd, $('#navContainer').width(), s.GetWindowHeight(wnd));
-													}
-												});
-										}"
-                            Shown="function(s, e) {
-											if (e.window.name != 'Error') {													
-													s.SetWindowSize(e.window, $('#navContainer').width(), s.GetWindowHeight(e.window));
-													$('.dxbButton_Moderno').filter('.dxbButtonSys').css('height', '');
-											}
-										}"
-                            CloseUp="function(s, e) { window['wnd'] = null; }"
-                            EndCallback="function(s, e) {
-												wnd = window['wnd'];
-												if (wnd != null) {
-													if (dxdash.IsWindowVisible(wnd)) {
-                                                        __aspxControlCollection.ForEachControl(function (ctrl, ctx) {
-															if ((typeof ctrl.cpCallbackCmd !== 'undefined') && (typeof ctrl.PerformCallback !== 'undefined')) {																
-				 												ctrl.PerformCallback(ctrl.cpCallbackCmd);
-															}
-														}, null);
-														dxdash.HideWindow(wnd);
-													}
-													else 
-														dxdash.ShowWindowAtPos(wnd, $('#navContainer').offset().left, $('#navContainer').offset().top+$('#navContainer').height());
-												}
-												}" />
+									 Init="popupCtrlInit"
+									 Shown="popupCtrlShown"									 
+									 EndCallback="popupCtrlEndCallback" />
                     </dx:ASPxPopupControl>
 
                 </nav>
@@ -187,9 +124,7 @@
                     </div>
                 </footer>
             </div>
-        </div>
-
-        
+        </div>		          
     </form>
 </body>
 </html>

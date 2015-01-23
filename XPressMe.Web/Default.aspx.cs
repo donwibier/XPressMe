@@ -20,9 +20,6 @@ namespace XPressMe.Web
             
         }
 
-
-
-
         protected override ASPxDataView DataViewCtrl
         {
             get { return dxPosts; }

@@ -1,0 +1,27 @@
+@Html.DevExpress().CallbackPanel(panelSettings =>
+{
+    panelSettings.Name = "navContainer";
+
+    panelSettings.CallbackRouteValues = new { Controller = ViewContext.RouteData.GetRequiredString("controller"), Action = "NavContainerCallback" };
+    panelSettings.Width = Unit.Percentage(100);
+    panelSettings.ControlStyle.CssClass = "widgetContainer";
+    panelSettings.CustomJSProperties = (sender, e) =>
+    {
+        e.Properties["cpCallbackCmd"] = "Reload";
+    };
+
+    panelSettings.SetContent(() =>
+    {
+        Html.DevExpress().Menu(menuSettings =>
+        {
+            menuSettings.Name = "dxMainMenu";
+            menuSettings.Width = Unit.Percentage(100);
+            menuSettings.ControlStyle.CssClass = "myNavigation";
+            menuSettings.ItemAutoWidth = false;
+            menuSettings.Orientation = System.Web.UI.WebControls.Orientation.Horizontal;
+            menuSettings.CustomJSProperties = ((s, e) => { e.Properties["cpCallbackCmd"] = "Reload"; });
+
+            menuSettings.ClientSideEvents.ItemClick = @"mainMenuItemClick";
+        }).Bind(Model).Render();
+    });
+}).GetHtml()

@@ -20,6 +20,9 @@
 					<uc1:ArticleControl ID="ArticleControl1" runat="server" CompactMode="false" />
 
 				</ItemTemplate>
+				<ClientSideEvents
+					 EndCallback="PostDataViewEndCallback"
+					 Init="PostDataViewInit" />
 			</dx:ASPxDataView>  
 		</div>
 		<div class="four columns">

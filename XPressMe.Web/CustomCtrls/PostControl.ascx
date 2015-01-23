@@ -1,14 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PostControl.ascx.cs" Inherits="XPressMe.Web.CustomCtrls.PostControl" %>
 
 <%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-
-
-
-
 <%@ Register Assembly="DevExpress.Xpo.v14.2.Web, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Xpo" TagPrefix="dx" %>
-
-
-
 
 <div class="popupPostControl">
 

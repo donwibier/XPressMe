@@ -9,7 +9,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">	
     <div class="container content">
 		<div class="twelve columns">
-            
            <dx:ASPxDataView runat="server" ID="dxPosts" Width="100%" 
                 OnCustomCallback="DataViewPosts_CustomCallback" 
                 OnCustomJSProperties="DataViewPosts_CustomJSProperties">
@@ -17,19 +16,16 @@
 				<PagerSettings ShowNumericButtons="False" EndlessPagingMode="OnScroll"></PagerSettings>
 				<ItemStyle CssClass="contentContainer" />
 				<ItemTemplate>
-
 					<uc1:ArticleControl ID="ArticleControl1" runat="server" CompactMode="true" />
-
 				</ItemTemplate>
+				<ClientSideEvents
+					 EndCallback="PostDataViewEndCallback"
+					 Init="PostDataViewInit" />
 			</dx:ASPxDataView>  
-            
         </div>
 		<div class="four columns">
-            
             <p></p>
-            
             <uc2:TagCloudControl ID="TagCloudControl1" runat="server" />
-            
         </div>
     </div>
 </asp:Content>

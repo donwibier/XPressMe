@@ -109,6 +109,7 @@
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\xpress-me.js" />
     <Content Include="stylesheets\base.css" />
     <Content Include="stylesheets\layout.css" />
     <Content Include="stylesheets\skeleton.css" />

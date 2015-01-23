@@ -26,8 +26,8 @@
 				</ContentStyle>
 				<ItemStyle CssClass="contentContainer" />
 				<ClientSideEvents
-					EndCallback="function(s,e) { $('.dxdvItem_Moderno').css('height', 0); } "
-					Init="function(s,e) { $('.dxdvItem_Moderno').css('height', 0); } " />
+					 EndCallback="PostDataViewEndCallback"
+					 Init="PostDataViewInit" />
 			</dx:ASPxDataView>
 		</div>
 		<div class="four columns">

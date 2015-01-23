@@ -1,0 +1,43 @@
+
+@{    
+    var controller = ViewContext.RouteData.GetRequiredString("controller");
+    var action = ViewContext.RouteData.GetRequiredString("action");
+    var id = Model.ID;
+}
+@Html.DevExpress().DataView(settings =>
+{
+    settings.Name = "PostDataView";
+    settings.CallbackRouteValues = new { Controller = controller, Action = "PostViewPartial", ID = id };
+    settings.AllowPaging = true;
+    settings.Width = Unit.Percentage(100);
+    settings.Layout = DevExpress.Web.Layout.Table;  
+    settings.SettingsTableLayout.RowsPerPage = 4;
+    settings.SettingsTableLayout.ColumnCount = 1;    
+    settings.PagerSettings.ShowNumericButtons = true;
+    settings.PagerSettings.EndlessPagingMode = DataViewEndlessPagingMode.OnClick;
+    settings.Styles.Item.BackColor = System.Drawing.Color.Transparent;
+    settings.Styles.Item.CssClass = "contentContainer";
+    settings.Styles.Item.Paddings.Padding = Unit.Pixel(0);
+    settings.Styles.Item.Height = Unit.Pixel(10);
+    settings.CustomJSProperties = (sender, e) =>
+    {
+        e.Properties["cpCallbackCmd"] = "Reload";
+    };
+    settings.SetItemTemplateContent(c =>
+    {
+        var dataItem = (XPressMe.Mvc.Models.PostModel)c.DataItem;
+
+        Html.DevExpress().RoundPanel(pnlSettings =>
+        {
+            pnlSettings.HeaderText = dataItem.Title;
+            pnlSettings.Width = Unit.Percentage(100);
+            pnlSettings.ShowHeader = true;
+            pnlSettings.SetContent(() =>
+            {
+                Html.RenderPartial("_ArticlePartial", dataItem);
+            });
+        }).Render();
+        
+    });
+}).Bind(Model.Posts).GetHtml()
+

@@ -1,0 +1,39 @@
+﻿@model XPressMe.Mvc.Models.PostModel
+
+@{    
+    var controller = ViewContext.RouteData.GetRequiredString("controller");
+    var action = ViewContext.RouteData.GetRequiredString("action");
+}
+<div class="metaContainer">
+    <span>Posted at @String.Format("{0:ddd, MM d, yyyy HH:mm}", Model.AddStamp) by @String.Format("{0}", Model.AddUser)</span><br />
+    <span>Group: @Model.GroupTitle</span>
+</div>
+
+<p>@Model.Article</p>
+
+@if (!Model.IsCompact)
+{
+    <div style="width: 100%">
+        @Html.DevExpress().ImageGallery(settings =>
+		  {
+				settings.Name = Guid.NewGuid().ToString();
+				settings.CallbackRouteValues = new { Controller = controller, Action = action, Post = Model };
+				settings.AllowPaging = false;
+				settings.Layout = DevExpress.Web.Layout.Flow;
+				settings.Width = Unit.Percentage(100);
+
+				settings.ImageContentBytesField = "Data";
+				settings.NameField = "FileName";
+				settings.ImageCacheFolder = @"~\Temp\Thumbs";
+				settings.SettingsFullscreenViewer.ImageSizeMode = ImageSizeMode.FillAndCrop;
+				settings.Styles.Content.Border.BorderStyle = BorderStyle.None;
+		  }).Bind(Model.Attachments).GetHtml()
+    </div>
+}
+else { 
+<div class="floatRight">	 
+    <a href="/Post/Details/@Model.ID">More...</a>
+</div>
+}
+
+

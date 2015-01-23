@@ -1,0 +1,25 @@
+﻿<div class="popupFooter">
+    <div class="popupFooterSpacer">&nbsp;</div>
+    <div class="popupFooterButtonOK">
+        @Html.DevExpress().Button(s =>
+         {
+             s.Name = "OKButton" + Model.Name;
+             s.UseSubmitBehavior = false;
+             s.Width = Unit.Percentage(100);
+             s.Text = "OK";
+             s.Images.Image.IconID = "actions_apply_16x16";
+             s.ClientSideEvents.Click = "popupOkButtonClick";
+         }).GetHtml()
+    </div>
+    <div class="popupFooterButtonCancel">
+        @Html.DevExpress().Button(s =>
+         {
+             s.Name = "CancelButton" + Model.Name;
+             s.UseSubmitBehavior = false;
+             s.Width = Unit.Percentage(100);
+             s.Text = "Cancel";
+             s.Images.Image.IconID = "actions_cancel_16x16";
+             s.ClientSideEvents.Click = "popupCancelButtonClick";
+         }).GetHtml()
+    </div>
+</div>

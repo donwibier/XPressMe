@@ -8,19 +8,14 @@
         <dx:ASPxButton ID="btxOK" runat="server" Text="OK" AutoPostBack="false" Width="100%">
             <Image IconID="actions_apply_16x16">
             </Image>
-            <ClientSideEvents Click="function(s, e) {		
-						    wnd = window['wnd'];						
-						    if (wnd != null) {
-							    dxdash.PerformWindowCallback(wnd, 'Store'); 
-						    }
-					    }" />
+            <ClientSideEvents Click="popupOkButtonClick" />
         </dx:ASPxButton>
     </div>
     <div class="popupFooterButtonCancel">    
         <dx:ASPxButton ID="btxCancel" runat="server" Text="Cancel" AutoPostBack="false" Width="100%">
             <Image IconID="actions_cancel_16x16">
             </Image>
-            <ClientSideEvents Click="function(s, e) { if (window['wnd'] != null) dxdash.HideWindow(window['wnd']) }" />
+            <ClientSideEvents Click="popupCancelButtonClick" />
         </dx:ASPxButton>
 	    
     </div>

@@ -1,0 +1,52 @@
+﻿@model XPressMe.Mvc.Models.PostModel
+
+@Html.DevExpress().PopupControl(popupSettings =>
+{
+    popupSettings.Name = "dxdash";
+    popupSettings.CallbackRouteValues = new
+    {
+        Controller = ViewContext.RouteData.GetRequiredString("controller"),
+        Action = "DashboardCallback",
+        ID = Model.ID
+    };
+    popupSettings.AllowDragging = false;
+    popupSettings.AllowResize = false;
+    popupSettings.CloseAction = CloseAction.None;
+    popupSettings.CloseOnEscape = true;
+    popupSettings.PopupAlignCorrection = PopupAlignCorrection.Disabled;
+    popupSettings.LoadContentViaCallback = LoadContentViaCallback.OnFirstShow;
+    popupSettings.Modal = true;
+    popupSettings.ShowHeader = false;
+    popupSettings.ShowShadow=false;
+    popupSettings.ShowFooter=true;
+    popupSettings.ShowSizeGrip = ShowSizeGrip.False;
+    popupSettings.ClientSideEvents.Init="popupCtrlInit";
+    popupSettings.ClientSideEvents.Shown = "popupCtrlShown";
+    popupSettings.ClientSideEvents.EndCallback = "popupCtrlEndCallback";
+    
+    var insertPopup = new MVCxPopupWindow() { Name = "Insert" };
+    insertPopup.SetContent(() =>
+    {
+        using (Ajax.BeginForm("DashboardSubmit", null,
+            new AjaxOptions
+            {
+                HttpMethod = "POST",                
+                OnComplete = "ajaxDashboardFormEnd",
+                UpdateTargetId = "formLayout",
+                InsertionMode = InsertionMode.Replace
+            }, new { id = "dashboardForm" }))
+        {
+            ViewContext.Writer.Write("<div id=\"formLayout\">");
+            if (Model.ID != Guid.Empty)
+            {
+                ViewContext.Writer.Write(String.Format("<input type=\"hidden\" name=\"id\" value=\"{0}\" />", Model.ID));
+            }
+            Html.RenderPartial("_DashboardFormLayoutPartial", Model);
+            
+        }
+    });
+        
+    insertPopup.SetFooterTemplateContent(c => Html.RenderPartial("_DashboardFooterPartial", c.DataItem));
+    popupSettings.Windows.Add(new PopupWindow[] { insertPopup });    
+}).GetHtml()
+
